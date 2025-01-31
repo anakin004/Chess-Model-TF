@@ -1,0 +1,14 @@
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\glm\detail\glm.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\glm.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\glm\glm.cppm;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\glm.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_demo.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui_demo.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_draw.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui_draw.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_impl_glfw.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui_impl_glfw.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_impl_opengl3.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui_impl_opengl3.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_tables.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui_tables.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_widgets.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui_widgets.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\Board.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\Board.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\Chess.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\Chess.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\main.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\main.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\util.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\util.obj
+C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\glad\glad.c;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\glad.obj
