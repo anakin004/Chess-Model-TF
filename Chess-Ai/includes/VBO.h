@@ -6,30 +6,18 @@
 
 class VBO
 {
-private:
-	GLuint m_ID;
 public:	
 
-
-	template <typename T>
-	VBO(const T vertices[], GLsizei size)
-	{
-		glGenBuffers(1, &m_ID);
-		glBindBuffer(GL_ARRAY_BUFFER, m_ID);
-		GlCall(glBufferData(GL_ARRAY_BUFFER, size, vertices, GL_STATIC_DRAW));
-	}
-
-	void LoadBuffer(std::vector<Vertex>& vertices, GLuint numVerts);
-
-	VBO();
+	VBO(std::vector<Vertex>& vertices);
 
 	~VBO();
 
 	void Bind() const;
 	void Unbind() const;
 
-	inline GLuint GetID() { return m_ID; };
-
+	inline unsigned int GetID() { return m_ID; };
+private:
+	unsigned int m_ID
 
 };
 

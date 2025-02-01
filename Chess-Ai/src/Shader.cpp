@@ -71,11 +71,11 @@ ShaderProgramSource get_file_contents(const std::string& filename)
 	ShaderType type = ShaderType::NONE;
 
 
-	if (1)
+	if (in)
 	{
 
 
-		std::string line;
+		std::string line("");
 
 
 		while (getline(in, line))
@@ -129,14 +129,10 @@ void Shader::InitShaders()
 
 	// binding texture0 for worldatlas in main shader
 	main_shader->Bind();
-	main_shader->SetUniform1f("texMultiplier", 0.5f);
 	main_shader->SetUniform1f("tex", 0);
 
 	main_shader->Unbind();
 
-	// not yet
-	//Shader* modelShader = new Shader("resources/model.shader");
-	//m_ShaderLocationCache["model.shader"] = modelShader;
 
 
 }
@@ -161,7 +157,8 @@ void Shader::Unbind() const
 // Deletes the Shader Programs
 void Shader::DeleteShaders()
 {
-	for (auto& it : m_ShaderLocationCache) {
+	for (auto& it : m_ShaderLocationCache) 
+	{
 		glDeleteProgram(it.second->GetID());
 		delete it.second;
 	}
