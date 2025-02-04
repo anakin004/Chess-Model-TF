@@ -8,7 +8,7 @@ class Board
 	
 	public:
 		
-		enum class PieceType : uint_8
+		enum PieceType : uint_8
 		{
 			Empty,
 			
@@ -48,7 +48,7 @@ class Board
 		inline uint64_t& get_white_bitboard() { return m_WhiteBitBoard; }
 		inline uint64_t& get_black_bitboard() { return m_BlackBitBoard; }
 		inline uint64_t& get_king_bitboard() { return m_KingBitBoard; }
-		inline std::array<uint_8, BOARD_SIZE>& get_normal_board() { return m_Board; }
+		inline std::array<PieceType, BOARD_SIZE>& get_normal_board() { return m_Board; }
 
 
 	private:
@@ -56,7 +56,7 @@ class Board
 		uint64_t m_WhiteBitBoard;
 		uint64_t m_BlackBitBoard;
 		uint64_t m_KingBitBoard;
-		std::array<uint_8, BOARD_SIZE> m_Board;
+		std::array<PieceType, BOARD_SIZE> m_Board;
 
 
 }
