@@ -41,18 +41,18 @@ public:
 	Texture() = default;
 
 
-	static void InitTextures();
-	static void DeleteTextures();
+	static void init_textures();
+	static void delete_textures();
 
-	void Bind(GLuint slot = 0) const;
-	void Unbind() const;
+	void bind(GLuint slot = 0) const;
+	void unbind() const;
 
-	inline int getWidth() const { return m_Width; }
-	inline int getHeight() const { return m_Height; }
-	inline int getSpriteSize() const { return m_SpriteSize; };
-	static Texture& GetTexture(int index);
+	inline int get_width() const { return m_Width; }
+	inline int get_height() const { return m_Height; }
+	inline int get_sprite_size() const { return m_SpriteSize; };
+	static Texture& get_texture(int index);
 
-	inline GLuint& getTextureID() { return m_ID; };
+	inline GLuint& get_texture_ID() { return m_ID; };
 
 };
 

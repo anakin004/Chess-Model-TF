@@ -8,16 +8,16 @@ class VBO
 {
 public:	
 
-	void LoadBuffer(std::vector<Vertex>& vertices, uint32_t numVerts);
+	void load_buffer(std::vector<Vertex>& vertices, uint32_t numVerts);
 
 	VBO();
 
 	~VBO();
 
-	void Bind() const;
-	void Unbind() const;
+	void bind() const;
+	void unbind() const;
 
-	inline uint32_t GetID() { return m_ID; };
+	inline uint32_t get_ID() { return m_ID; };
 
 private:
 	uint32_t m_ID;

@@ -1,4 +1,6 @@
 #pragma once
 
+#include <cstdint> // for uint8_t
 
-extern constexpr uint8_t BOARD_SIZE = 64;
+// aka number of squares
+constexpr uint8_t BOARD_SIZE = 64;

@@ -9,7 +9,8 @@ class EBO
 public:
 
 
-	void LoadBuffer(uint32_t* indices, uint32_t numIndices);
+	void load_buffer(uint32_t* indices, uint32_t numIndices);
+
 
 	EBO();
 
@@ -17,11 +18,11 @@ public:
 	~EBO();
 
 	// Binds the EBO
-	void Bind() const;
+	void bind() const;
 	// Unbinds the EBO
-	void Unbind() const;
+	void unbind() const;
 
-	inline uint32_t GetID() { return m_ID; };
+	inline uint32_t get_ID() { return m_ID; };
 	
 private:
 	

@@ -107,20 +107,20 @@ ShaderProgramSource get_file_contents(const std::string& filename)
 }
 
 
-void Shader::SetUniformMat4f(const std::string& uni_name, const glm::mat4& matrix)
+void Shader::set_uniform_mat4f(const std::string& uni_name, const glm::mat4& matrix)
 {
 	// obv id, then num of matrix's which is 1, then whether or not we have a row
 	// major matrix or column to transpose, since its col we dont
 	glUniformMatrix4fv(getUniform(uni_name), 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
-void Shader::SetUniform3fs(const std::string& uni_name, const glm::vec3 vector[6])
+void Shader::set_uniform_3fs(const std::string& uni_name, const glm::vec3 vector[6])
 {
 	glUniform3fv(getUniform(uni_name), 6, glm::value_ptr(vector[0]));
 }
 
 
-void Shader::InitShaders()
+void Shader::init_shaders()
 {
 
 	Shader* main_shader = new Shader("Resources/shaders/shader.glsl");
@@ -138,24 +138,24 @@ void Shader::InitShaders()
 }
 
 
-void Shader::BindShaderID(GLint ID)
+void Shader::bind_by_id(GLint ID)
 {
 	glUseProgram(ID);
 }
 
 
 // Activates the Shader Program
-void Shader::Bind() const
+void Shader::bind() const
 {
 	glUseProgram(m_ID);
 }
-void Shader::Unbind() const
+void Shader::unbind() const
 {
 	glUseProgram(0);
 }
 
 // Deletes the Shader Programs
-void Shader::DeleteShaders()
+void Shader::delete_shaders()
 {
 	for (auto& it : m_ShaderLocationCache) 
 	{
@@ -165,7 +165,7 @@ void Shader::DeleteShaders()
 }
 
 
-GLint Shader::getUniform(const std::string& name)
+GLint Shader::get_uniform(const std::string& name)
 {
 	if (m_UniformLocationCache.find(name) != m_UniformLocationCache.end())
 		return m_UniformLocationCache[name];
@@ -179,7 +179,7 @@ GLint Shader::getUniform(const std::string& name)
 	return loc;
 }
 
-Shader* Shader::getShader(const std::string& name)
+Shader* Shader::get_shader(const std::string& name)
 {
 	if (m_ShaderLocationCache.find(name) != m_ShaderLocationCache.end())
 		return m_ShaderLocationCache[name];
@@ -191,31 +191,31 @@ Shader* Shader::getShader(const std::string& name)
 	return nullptr;
 }
 
-void Shader::SetUniformVec4f(const std::string& uni_name, const glm::vec4& vector)
+void Shader::set_uniform_vec4f(const std::string& uni_name, const glm::vec4& vector)
 {
 	glUniform4f(getUniform(uni_name), vector.x, vector.y, vector.z, vector.w);
 
 }
 
-void Shader::SetUniformVec3f(const std::string& uni_name, const glm::vec3& vector)
+void Shader::set_uniform_vec3f(const std::string& uni_name, const glm::vec3& vector)
 {
 	glUniform3f(getUniform(uni_name), vector.x, vector.y, vector.z);
 
 }
 
-void Shader::SetUniform1f(const std::string& uni_name, const float val)
+void Shader::set_uniform_1f(const std::string& uni_name, const float val)
 {
 	glUniform1f(getUniform(uni_name), val);
 }
 
-void Shader::SetUniform1i(const std::string& uni_name, const int val)
+void Shader::set_uniform_1i(const std::string& uni_name, const int val)
 {
 	glUniform1i(getUniform(uni_name), val);
 }
 
 
 // Checks if the different Shaders have compiled properly
-void Shader::compileErrors(unsigned int shader, const char* type)
+void Shader::compile_errors(unsigned int shader, const char* type)
 {
 	// Stores status of compilation
 	GLint hasCompiled;

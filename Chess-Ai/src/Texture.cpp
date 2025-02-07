@@ -38,29 +38,29 @@ Texture::Texture(const std::string& path, int numSpritesVert)
 }
 
 
-Texture& Texture::GetTexture(int index) {
+Texture& Texture::get_texture(int index) {
 	return m_Textures[index];
 }
 
-void Texture::InitTextures()
+void Texture::init_textures()
 {
-	m_Textures[0] = Texture("resources/textures/block_map.png", 16);
+	m_Textures[0] = Texture("resources/textures/chess_board.png", 16);
 }
 
 
-void Texture::Bind(GLuint slot /*= 0*/) const
+void Texture::bind(GLuint slot /*= 0*/) const
 {
 	glActiveTexture(GL_TEXTURE0 + slot);
 	glBindTexture(GL_TEXTURE_2D, m_ID);
 }
 
-void Texture::Unbind() const
+void Texture::unbind() const
 {
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 
-void Texture::DeleteTextures()
+void Texture::delete_textures()
 {
 	for (auto& tex : m_Textures)
 	{
