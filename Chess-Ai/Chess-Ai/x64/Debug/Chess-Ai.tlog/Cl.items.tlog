@@ -9,6 +9,12 @@ C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_tables.cpp;C:\Dev\Chess-A
 C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\imgui\imgui_widgets.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\imgui_widgets.obj
 C:\Dev\Chess-Ai\Chess-Ai\src\Board.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\Board.obj
 C:\Dev\Chess-Ai\Chess-Ai\src\Chess.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\Chess.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\EBO.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\EBO.obj
 C:\Dev\Chess-Ai\Chess-Ai\src\main.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\main.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\Shader.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\Shader.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\stb_image_imp.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\stb_image_imp.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\Texture.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\Texture.obj
 C:\Dev\Chess-Ai\Chess-Ai\src\util.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\util.obj
 C:\Dev\Chess-Ai\Chess-Ai\Libraries\include\glad\glad.c;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\glad.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\VAO.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\VAO.obj
+C:\Dev\Chess-Ai\Chess-Ai\src\VBO.cpp;C:\Dev\Chess-Ai\Chess-Ai\Chess-Ai\x64\Debug\VBO.obj

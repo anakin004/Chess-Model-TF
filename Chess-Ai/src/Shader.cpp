@@ -20,41 +20,31 @@ Shader::Shader(const std::string& filepath) : m_UniformLocationCache()
 	const char* fragmentSource = shaderCode.FragmentSource.c_str();
 
 
-	// Create Vertex Shader Object and get its reference
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	// Attach Vertex Shader source to the Vertex Shader Object
 	glShaderSource(vertexShader, 1, &vertexSource, NULL);
-	// Compile the Vertex Shader into machine code
 	glCompileShader(vertexShader);
-	compileErrors(vertexShader, "VERTEX");
+	compile_errors(vertexShader, "VERTEX");
 
-	// Create Fragment Shader Object and get its reference
 	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	// Attach Fragment Shader source to the Fragment Shader Object
 	glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
-	// Compile the Vertex Shader into machine code
 	glCompileShader(fragmentShader);
-	compileErrors(fragmentShader, "FRAGMENT");
+	compile_errors(fragmentShader, "FRAGMENT");
 
-	// Create Shader Program Object and get its reference
 	m_ID = glCreateProgram();
 
-	// Attach the Vertex and Fragment Shaders to the Shader Program
 	glAttachShader(m_ID, vertexShader);
 	glAttachShader(m_ID, fragmentShader);
-	compileErrors(vertexShader, "PROGRAM");
+	compile_errors(vertexShader, "PROGRAM");
 
 	glLinkProgram(m_ID);
 	glValidateProgram(m_ID);
 
 
-	// Delete the now useless Vertex and Fragment Shader objects
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
 }
 
-// Reads a text file and outputs a string with everything in the text file
 ShaderProgramSource get_file_contents(const std::string& filename)
 {
 	std::ifstream in(filename.c_str(), std::ios::binary);
@@ -111,12 +101,12 @@ void Shader::set_uniform_mat4f(const std::string& uni_name, const glm::mat4& mat
 {
 	// obv id, then num of matrix's which is 1, then whether or not we have a row
 	// major matrix or column to transpose, since its col we dont
-	glUniformMatrix4fv(getUniform(uni_name), 1, GL_FALSE, glm::value_ptr(matrix));
+	glUniformMatrix4fv(get_uniform(uni_name), 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
 void Shader::set_uniform_3fs(const std::string& uni_name, const glm::vec3 vector[6])
 {
-	glUniform3fv(getUniform(uni_name), 6, glm::value_ptr(vector[0]));
+	glUniform3fv(get_uniform(uni_name), 6, glm::value_ptr(vector[0]));
 }
 
 
@@ -128,10 +118,10 @@ void Shader::init_shaders()
 	m_ShaderLocationCache["main_shader"] = main_shader;
 
 	// binding texture0 for worldatlas in main shader
-	main_shader->Bind();
-	main_shader->SetUniform1f("tex", 0);
+	main_shader->bind();
+	main_shader->set_uniform_1i("tex", 0);
 
-	main_shader->Unbind();
+	main_shader->unbind();
 
 
 
@@ -154,12 +144,12 @@ void Shader::unbind() const
 	glUseProgram(0);
 }
 
-// Deletes the Shader Programs
+
 void Shader::delete_shaders()
 {
 	for (auto& it : m_ShaderLocationCache) 
 	{
-		glDeleteProgram(it.second->GetID());
+		glDeleteProgram(it.second->get_ID());
 		delete it.second;
 	}
 }
@@ -185,7 +175,7 @@ Shader* Shader::get_shader(const std::string& name)
 		return m_ShaderLocationCache[name];
 
 	else
-		std::cout << "Couldnt find shader name ERROR ERROR ";
+		std::cout << "Couldnt find shader name " << name << '\n';
 	
 
 	return nullptr;
@@ -193,24 +183,24 @@ Shader* Shader::get_shader(const std::string& name)
 
 void Shader::set_uniform_vec4f(const std::string& uni_name, const glm::vec4& vector)
 {
-	glUniform4f(getUniform(uni_name), vector.x, vector.y, vector.z, vector.w);
+	glUniform4f(get_uniform(uni_name), vector.x, vector.y, vector.z, vector.w);
 
 }
 
 void Shader::set_uniform_vec3f(const std::string& uni_name, const glm::vec3& vector)
 {
-	glUniform3f(getUniform(uni_name), vector.x, vector.y, vector.z);
+	glUniform3f(get_uniform(uni_name), vector.x, vector.y, vector.z);
 
 }
 
 void Shader::set_uniform_1f(const std::string& uni_name, const float val)
 {
-	glUniform1f(getUniform(uni_name), val);
+	glUniform1f(get_uniform(uni_name), val);
 }
 
 void Shader::set_uniform_1i(const std::string& uni_name, const int val)
 {
-	glUniform1i(getUniform(uni_name), val);
+	glUniform1i(get_uniform(uni_name), val);
 }
 
 

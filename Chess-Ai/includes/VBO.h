@@ -8,7 +8,7 @@ class VBO
 {
 public:	
 
-	void load_buffer(std::vector<Vertex>& vertices, uint32_t numVerts);
+	void load_buffer(std::vector<Vertex>& vertices);
 
 	VBO();
 

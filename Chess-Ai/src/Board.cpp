@@ -2,23 +2,29 @@
 #include "util.h"
 
 Board::Board()
+    : m_Texture(&Texture::get_texture(0)),
+      m_Vao(),
+      m_Vbo()
 {
-	
-	m_WhiteBitBoard = static_cast<uint64_t>( pow(2, 17) - 1 );
 
-	// we can shift the white bit board by 4 rows or 8x4 bits
-	m_BlackBitBoard = m_WhiteBitBoard << ( 8*4 );
+    m_Board = {
+        // 8th row (black pieces)
+        bRook, bKnight, bBishop, bQueen, bKing, bBishop, bKnight, bRook,
 
-	
-	m_Board = {
-		bRook, bKnight, bBishop, bQueen, bKing, bBishop, bKnight, bRook,
-		bPawn, bPawn, bPawn, bPawn, bPawn, bPawn, bPawn, bPawn,
-		Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty,
-		Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty,
-		Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty,
+        // 7th row (black pawns)
+        bPawn, bPawn, bPawn, bPawn, bPawn, bPawn, bPawn, bPawn,
+
+        // 6th to 3rd row (empty squares)
         Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty,
-		wPawn, wPawn, wPawn, wPawn, wPawn, wPawn, wPawn, wPawn,
-		wRook, wKnight, wBishop, wQueen, wKing, wBishop, wKnight, wRook
-	};
+        Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty,
+        Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty,
+        Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty,
 
+
+        // 2nd row (white pawns)
+        wPawn, wPawn, wPawn, wPawn, wPawn, wPawn, wPawn, wPawn,
+
+        // 1st row (white pieces)
+        wRook, wKnight, wBishop, wQueen, wKing, wBishop, wKnight, wRook
+    };
 }

@@ -1,6 +1,12 @@
 #pragma once
 
-#include <cstdint> // for uint8_t
+#include <cstdint>
+#include <glm/glm.hpp>
 
-// aka number of squares
-constexpr uint8_t BOARD_SIZE = 64;
+struct Vertex
+{
+	glm::vec2 pos;
+	glm::vec4 tex_pos;
+};
+
+constexpr uint32_t BOARD_SIZE = 64;

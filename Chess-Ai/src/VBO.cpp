@@ -2,17 +2,17 @@
 #include <vector>
 
 
-VBO::VBO(std::vector<Vertex>& vertices)
+VBO::VBO()
 {
 	glGenBuffers(1, &m_ID);
 	glBindBuffer(GL_ARRAY_BUFFER, m_ID);
 }
 
 
-void VBO::load_buffer(std::vector<Vertex>& vertices, GLuint numVerts)
+void VBO::load_buffer(std::vector<Vertex>& vertices)
 {
 	glBindBuffer(GL_ARRAY_BUFFER, m_ID);
-	GlCall(glBufferData(GL_ARRAY_BUFFER, 0, sizeof(Vertex) * numVerts, &vertices));
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * vertices.size(), &vertices[0], GL_STATIC_DRAW);
 }
 
 

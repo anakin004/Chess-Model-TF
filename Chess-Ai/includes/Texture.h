@@ -17,24 +17,12 @@
 
 #include "Shader.h"
 #include "util.h"
-#include "Block.h"
 
 
 
 class Texture
 {
 
-private:
-
-	GLuint m_ID;
-	std::string m_FilePath;
-	unsigned char* m_ImgBytes;
-	int m_Width, m_Height, m_BPP, m_SpriteSize;
-	static std::array<Texture, 4> m_Textures;
-
-	Texture(const std::string& path, int);
-	
-	
 
 public:
 
@@ -44,7 +32,7 @@ public:
 	static void init_textures();
 	static void delete_textures();
 
-	void bind(GLuint slot = 0) const;
+	void bind(int slot = 0) const;
 	void unbind() const;
 
 	inline int get_width() const { return m_Width; }
@@ -53,6 +41,17 @@ public:
 	static Texture& get_texture(int index);
 
 	inline GLuint& get_texture_ID() { return m_ID; };
+
+private:
+
+	GLuint m_ID;
+	std::string m_FilePath;
+	unsigned char* m_ImgBytes;
+	int m_Width, m_Height, m_BPP, m_SpriteSize;
+	static std::array<Texture, 4> m_Textures;
+
+	Texture(const std::string& path);
+
 
 };
 
