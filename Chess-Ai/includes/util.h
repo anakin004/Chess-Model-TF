@@ -10,3 +10,5 @@ struct Vertex
 };
 
 constexpr uint32_t BOARD_SIZE = 64;
+const uint32_t SCREEN_WIDTH = 1000;
+const uint32_t SCREEN_HEIGHT = 1000;

@@ -150,6 +150,7 @@
     <ClCompile Include="Libraries\include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="Libraries\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="Libraries\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Board.cpp" />
     <ClCompile Include="src\Chess.cpp" />
     <ClCompile Include="src\EBO.cpp" />
@@ -163,6 +164,8 @@
     <ClCompile Include="src\VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="includes\App.h" />
+    <ClInclude Include="includes\Board.h" />
     <ClInclude Include="includes\EBO.h" />
     <ClInclude Include="includes\Shader.h" />
     <ClInclude Include="includes\Texture.h" />
@@ -611,6 +614,7 @@
     <None Include="Libraries\include\glm\gtx\vector_angle.inl" />
     <None Include="Libraries\include\glm\gtx\vector_query.inl" />
     <None Include="Libraries\include\glm\gtx\wrap.inl" />
+    <None Include="Resources\shaders\shader.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

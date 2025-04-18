@@ -7,7 +7,8 @@ Board::Board()
       m_Vbo()
 {
 
-    m_Board = {
+    m_Board = 
+    {
         // 8th row (black pieces)
         bRook, bKnight, bBishop, bQueen, bKing, bBishop, bKnight, bRook,
 

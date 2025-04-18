@@ -34,7 +34,7 @@ public:
 
 
 	Board();
-	~Board();
+	~Board() = default;
 
 	inline const std::array<PieceType, BOARD_SIZE>& get_board() const { return m_Board; }
 

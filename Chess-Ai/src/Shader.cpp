@@ -117,10 +117,9 @@ void Shader::init_shaders()
 
 	m_ShaderLocationCache["main_shader"] = main_shader;
 
-	// binding texture0 for worldatlas in main shader
+	// binding texture0 for chess png in main shader
 	main_shader->bind();
 	main_shader->set_uniform_1i("tex", 0);
-
 	main_shader->unbind();
 
 
