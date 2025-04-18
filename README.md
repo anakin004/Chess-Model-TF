@@ -4,10 +4,11 @@
 Chess-AI is a repoistory for the development of a chess engine, and will provide implimentations of a tranditional engine ( like stockfish ), and a machine learning based model like AlphaZero
 
 ## Features (Will Have)
-- Move generation and evaluation
 - AI opponent with varying difficulty levels
-- Integration with TensorFlow for machine learning capabilities
 - Interactive chessboard interface
+
+- ## Current Features
+- Integration with TensorFlow for machine learning capabilities (Model Is Work In Progress)
 
 ## Technologies Used
 - OpenGL
