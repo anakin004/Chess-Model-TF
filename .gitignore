@@ -1,1 +1,27 @@
-.vs/
+# MSVC/Visual Studio build files
+*.obj
+*.ilk
+*.pdb
+*.idb
+*.log
+*.tlog
+*.user
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+*.suo
+*.cache
+*.db
+*.ipch
+
+# Visual Studio project files (optional)
+*.vcxproj.*
+*.vcxproj
+
+# Build directories
+Debug/
+Release/
+x64/

@@ -1,5 +1,5 @@
 #include "Shader.h"
-#include <glm/gtc/type_ptr.hpp> // for value_ptr
+#include <glm/gtc/type_ptr.hpp> 
 
 
 #include <glad/glad.h>
@@ -113,7 +113,7 @@ void Shader::set_uniform_3fs(const std::string& uni_name, const glm::vec3 vector
 void Shader::init_shaders()
 {
 
-	Shader* main_shader = new Shader("Resources/shaders/shader.glsl");
+	Shader* main_shader = new Shader("Resources/shaders/board.glsl");
 
 	m_ShaderLocationCache["main_shader"] = main_shader;
 

@@ -1,53 +1,42 @@
 #pragma once
 
+#include "util.h"        
 #include "Texture.h"
-#include "util.h"
+#include "Shader.h"
 #include "VAO.h"
+#include "EBO.h"
 #include "VBO.h"
+#include <glm/glm.hpp>
 #include <array>
+#include <vector>
+#include <GLFW/glfw3.h>
 
-class Board
-{
-
+class Board {
 public:
-
-	enum PieceType : uint8_t
-	{
-		Empty,
-
-		wPawn,
-		wKnight,
-		wBishop,
-		wRook,
-		wQueen,
-		wKing,
-
-		bPawn,
-		bKnight,
-		bBishop,
-		bRook,
-		bQueen,
-		bKing
-	};
+    Board();
+    ~Board();
 
 
-
-
-	Board();
-	~Board() = default;
-
-	inline const std::array<PieceType, BOARD_SIZE>& get_board() const { return m_Board; }
-
+    void render(const glm::mat4& viewProj);
+    bool handleClick(GLFWwindow* window);
+    void movePiece(int from, int to);
 
 private:
+    std::array<Piece, 64> m_Board;
+    int m_Selected = -1;
 
-	std::array<PieceType, BOARD_SIZE> m_Board;
+    VAO m_Vao;
+    VBO m_Vbo;
+    EBO m_Ebo;
+    Shader m_Shader;
+    Texture m_Texture;
 
-	// textures are intiialized in app startup
-	Texture* m_Texture;
+    std::vector<Vertex> m_Vertices;
+    std::vector<uint32_t> m_Indices;
 
-	VAO m_Vao;
-	VBO m_Vbo;
+    glm::mat4 m_ViewProj;
 
-
+    void setupBuffers();
+    void updatePieceUVs();
+    int  pickSquare(double mx, double my);
 };

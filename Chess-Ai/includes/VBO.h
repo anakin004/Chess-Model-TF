@@ -8,11 +8,11 @@ class VBO
 {
 public:	
 
-	void load_buffer(std::vector<Vertex>& vertices);
 
 	VBO();
-
 	~VBO();
+
+	void load_buffer(std::vector<Vertex>& vertices);
 
 	void bind() const;
 	void unbind() const;

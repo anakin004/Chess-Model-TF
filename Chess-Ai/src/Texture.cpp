@@ -40,6 +40,7 @@ Texture& Texture::get_texture(int index) {
 void Texture::init_textures()
 {
 	m_Textures[0] = Texture("resources/textures/chess_board.png");
+	m_Textures[1] = Texture("resources/textures/chess_pices.png");
 }
 
 
